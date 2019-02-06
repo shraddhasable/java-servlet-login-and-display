@@ -37,8 +37,11 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/logout.do">Logout</a></li>
+            <li><a href="LogoutServlet">Logout</a></li>
         </ul>
+        
+        <p>Look at the <a href="version.properties">version Info</a> 
+
 
     </nav>
 

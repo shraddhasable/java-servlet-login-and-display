@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 @WebFilter(urlPatterns = "*.do")
 public class LoginRequiredFilter implements Filter {
 
-    public void destroy() {
-    	LoginDao.closeConnection();
-    }
 
     public void doFilter(ServletRequest servletRequest,
             ServletResponse servletResponse, FilterChain chain)
@@ -30,5 +27,11 @@ public class LoginRequiredFilter implements Filter {
 
     public void init(FilterConfig arg0) throws ServletException {
     }
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

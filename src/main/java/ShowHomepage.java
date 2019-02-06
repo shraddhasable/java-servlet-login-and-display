@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/homepage.do")
 public class ShowHomepage extends HttpServlet {
 
 
@@ -15,6 +14,14 @@ public class ShowHomepage extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("/WEB-INF/views/homepage.jsp").forward(request, response);
-    }
+            request.getServletContext().getRequestDispatcher("/WEB-INF/views/homepage.jsp").forward(request, response);
+            }
+        //request.getRequestDispatcher("/WEB-INF/views/homepage.jsp").forward(request, response);
+        
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {       
+    response.getWriter().println("<h1>success</h1>  ");
+    request.getServletContext().getRequestDispatcher("/WEB-INF/views/homepage.jsp").include(request, response);
+}
+    
 }

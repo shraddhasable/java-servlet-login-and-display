@@ -27,7 +27,7 @@
 		          <h1 class="text-center">COMPOSITE APPS</h1>
 		      </div>
 		      <div class="modal-body">
-		          <form class="form col-md-12 center-block" action="/login.do" method="POST">
+		          <form class="form col-md-12 center-block" action="LoginServlet" method="POST">
 		            <div class="form-group">
 		              <input type="text" class="form-control input-lg" placeholder="Username" name="name">
 		            </div>
@@ -35,7 +35,7 @@
 		              <input type="password" class="form-control input-lg" placeholder="Password" name="password">
 		            </div>
 		            <div class="form-group">
-		              <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
+		              <button class="btn btn-primary btn-lg btn-block" type="submit" >Sign In</button>
 		            </div>
 		          </form>
 		      </div>

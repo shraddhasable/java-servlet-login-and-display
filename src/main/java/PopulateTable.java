@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
  
@@ -14,7 +15,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
  
  
-@WebServlet("/PopulateTable")
 public class PopulateTable extends HttpServlet {
  private static final long serialVersionUID = 1L;
  
@@ -26,7 +26,12 @@ public class PopulateTable extends HttpServlet {
      
       System.out.println("DEBUG 1");
       ArrayList<Employee> employees = new ArrayList<Employee>();
-      employees = LoginDao.getAllEmployees();
+      try {
+		employees = LoginDao.getAllEmployees();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
       Gson gson = new Gson();
       JsonElement element = gson.toJsonTree(employees, new TypeToken<List<Employee>>() {}.getType());
        

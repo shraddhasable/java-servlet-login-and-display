@@ -70,4 +70,11 @@ public class Employee {
 		return password;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", phone=" + phone + ", supervisor=" + supervisor
+				+ ", username=" + username + ", password=" + password + "]";
+	}
+
+	
 }
